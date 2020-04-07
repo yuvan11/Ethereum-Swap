@@ -23,19 +23,17 @@ class App extends Component {
     this.setState({ etherBalance })
 
     // Load Token
-    //const abi = Token.abi
     const networkId =  await web3.eth.net.getId()
     const tokenData = Token.networks[networkId]
     if(tokenData) {
-     const token = new web3.eth.Contract(Token.abi, tokenData.address)
-     //console.log(token)
-    
+      const token = new web3.eth.Contract(Token.abi, tokenData.address)
       this.setState({ token })
       let tokenBalance = await token.methods.balanceOf(this.state.account).call()
       this.setState({ tokenBalance: tokenBalance.toString() })
     } else {
       window.alert('Token contract not deployed to detected network.')
     }
+
 
      //Load EtherSwap
    const etherSwapData = EtherSwap.networks[networkId]
@@ -97,10 +95,10 @@ class App extends Component {
      content = <p id="loader" className="text-center">Loading...</p>
     } else {
       content = <Main 
-        //etherBalance={this.state.etherBalance}
-        //tokenBalance={this.state.tokenBalance}
-        //buyTokens={this.buyTokens}
-        //sellTokens={this.sellTokens}
+        etherBalance={this.state.etherBalance}
+        tokenBalance={this.state.tokenBalance}
+        buyTokens={this.buyTokens}
+        sellTokens={this.sellTokens}
       />
     }
 
@@ -112,7 +110,7 @@ class App extends Component {
             <main role="main" className="col-lg-12 ml-auto mr-auto" style={{ maxWidth: '600px' }}>
               <div className="content mr-auto ml-auto">
                 <a
-                  href="http://www.dappuniversity.com/bootcamp"
+                  href="https://github.com/yuvan11"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
