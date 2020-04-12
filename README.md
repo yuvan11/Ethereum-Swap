@@ -1,6 +1,6 @@
 # Ethereum-Swap
 	 Building a Crypto-Exchange Dapp(De-Centralized Application) that uses smart contracts on the Ethereum blockchain using ERC-20 tokens.	 
-# QuickStart the project 
+#  QuickStart the project 
 
 ### 1. Install latest npm and nodejs version
 ### 2. Install Ganache https://www.trufflesuite.com/ganache
